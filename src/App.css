@@ -8,7 +8,7 @@
   --texto: #edf5ff;
   --muted: #a8bee8;
   --correta: #3aa655;
-  --presente: #d7b93f;
+  --presente: #f9c016;
   --ausente: #4a5365;
   --tecla: #2d3f66;
   --tecla-escura: #1d2c4d;
@@ -146,7 +146,7 @@ button {
 .status-presente {
   background: var(--presente);
   border-color: var(--presente);
-  color: #1a1a12;
+  color: #fff;
 }
 
 .status-ausente {
@@ -220,7 +220,7 @@ button {
 
 .tecla.status-presente {
   background: var(--presente);
-  color: #1a1a12;
+  color: #fff;
 }
 
 .tecla.status-ausente {

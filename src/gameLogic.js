@@ -25,32 +25,13 @@ export const verificarTentativa = (valor, listaPalavras = palavras) => {
 };
 
 export const avaliarPalavra = (palavra, palavraAlvo = PALAVRA_SECRETA) => {
-  const resultado = Array(TAMANHO).fill('ausente');
-  const restantes = {};
-
-  for (let i = 0; i < TAMANHO; i += 1) {
-    const letraAlvo = palavraAlvo[i];
-
-    if (palavra[i] === letraAlvo) {
-      resultado[i] = 'correta';
-    } else {
-      restantes[letraAlvo] = (restantes[letraAlvo] || 0) + 1;
-    }
-  }
-
-  for (let i = 0; i < TAMANHO; i += 1) {
-    if (resultado[i] === 'correta') {
-      continue;
+  return Array.from({ length: TAMANHO }, (_, i) => {
+    if (palavra[i] === palavraAlvo[i]) {
+      return 'correta';
     }
 
-    const letra = palavra[i];
-    if (restantes[letra] > 0) {
-      resultado[i] = 'presente';
-      restantes[letra] -= 1;
-    }
-  }
-
-  return resultado;
+    return palavraAlvo.includes(palavra[i]) ? 'presente' : 'ausente';
+  });
 };
 
 export default palavras;

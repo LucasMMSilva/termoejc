@@ -25,9 +25,19 @@ test('rejeita palavra inexistente sem limpar o estado atual', () => {
   assert.equal(resultado.mensagem, 'Essa palavra não existe');
 });
 
-test('avalia letras repetidas corretamente', () => {
+test('marca de amarelo todas as letras presentes, mesmo quando repetidas', () => {
   const resultado = avaliarPalavra('SASSO', 'SOUSA');
-  assert.deepEqual(resultado, ['correta', 'presente', 'ausente', 'correta', 'presente']);
+  assert.deepEqual(resultado, ['correta', 'presente', 'presente', 'correta', 'presente']);
+});
+
+test('marca de amarelo a letra repetida fora da posição correta', () => {
+  const resultado = avaliarPalavra('CARRO', 'CEDRO');
+  assert.deepEqual(resultado, ['correta', 'ausente', 'presente', 'correta', 'correta']);
+});
+
+test('marca em amarelo as letras presentes na posição errada', () => {
+  const resultado = avaliarPalavra('DECRO', 'CEDRO');
+  assert.deepEqual(resultado, ['presente', 'correta', 'presente', 'correta', 'correta']);
 });
 
 test('marca palavra correta totalmente', () => {
