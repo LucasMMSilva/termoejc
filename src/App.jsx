@@ -11,8 +11,8 @@ import {
 const CHAVE_STORAGE = "descubra-o-local:vitoria";
 
 const LOCAL = {
-  local: "Parque Ecológico Cedro",
-  dia: "24 de Outubro",
+  local: "Parque Ecológico CEDRO",
+  data: "24 de Outubro",
   horario: "16:00",
 };
 
@@ -292,6 +292,18 @@ function App() {
             </p>
 
             <p>AQUI FOI SÓ O COMEÇO…</p>
+
+            <ul className="lista-detalhes">
+              <li>
+                <strong>Local:</strong> {LOCAL.local}
+              </li>
+              <li>
+                <strong>Data:</strong> {LOCAL.data}
+              </li>
+              <li>
+                <strong>Horário:</strong> {LOCAL.horario}
+              </li>
+            </ul>
 
             <a className="botao" href="/conviteejc.png" download="conviteejc.png">
               Baixar convite
